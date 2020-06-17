@@ -39,11 +39,8 @@ void print_times_table(int n)
 				}
 				_putchar(d3 + '0');
 			}
-			if (b < n)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			_putchar(',');
+			_putchar(' ');
 		}
 		_putchar('\n');
 	}

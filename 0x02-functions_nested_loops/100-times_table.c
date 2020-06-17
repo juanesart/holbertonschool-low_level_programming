@@ -9,9 +9,7 @@ void print_times_table(int n)
 	int a, b, r, d1, d2, d3;
 
 	if (n > 15 || n < 0)
-	{
 		return;
-	}
 	for (a = 0; a <= n; a++)
 	{
 		for (b = 0; b <= n; b++)
@@ -39,8 +37,11 @@ void print_times_table(int n)
 				}
 				_putchar(d3 + '0');
 			}
-			_putchar(',');
-			_putchar(' ');
+			if (b < n)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}

@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * swap_int - swap values 
+ * swap_int - swap values
  * @a: takes in an integer
  * @b: takes in an integer
  */

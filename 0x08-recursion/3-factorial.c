@@ -2,7 +2,7 @@
 /**
  * factorial - factorial of a number
  * @n: imput integer
- * Return: 
+ * Return: factorial of a integer
  */
 
 int factorial(int n)

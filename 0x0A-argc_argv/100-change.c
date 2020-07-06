@@ -7,8 +7,8 @@
  *@argv: argument vector
  *Return: amount of cents you need to give back,
  *error if number of arguments
-
  */
+
 int main(int argc, char *argv[])
 {
 	int count;

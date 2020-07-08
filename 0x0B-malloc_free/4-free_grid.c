@@ -1,0 +1,21 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * free_grid - Write a function that returns a pointer to a 2 dimensional
+ * array of integers.
+ * @grid: height array
+ * @height: width array
+ * Return: Pointer
+ */
+void free_grid(int **grid, int height)
+{
+	int j;
+
+	for (j = 0; j < height; j++)
+	{
+		free(*(grid + j));
+	}
+	free(grid);
+}

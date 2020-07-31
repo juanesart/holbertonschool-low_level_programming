@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <math.h>
-#include <stdio>
+#include <stdio.h>
 /**
   * print_binary - prints the binary representation of a number
   * @n: takes in a number

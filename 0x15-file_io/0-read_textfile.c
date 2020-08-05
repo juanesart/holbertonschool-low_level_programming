@@ -3,30 +3,25 @@
   * read_textfile - reads a text file and prints it to the POSIX
   * @filename: points to file that we will be receiving
   * @letters: size of letters to read in
-  * Return: the readFile
+  * Return: rd_wr
   */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file = 0, rFile = 0, wFile = 0, closeFile;
-	char *buffer;
+	char *buffer = NULL;
+	int file = 0, rd_wr = 0;
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-		return (0);
-	if (filename == NULL)
-		return (0);
-	file = open(filename, O_RDONLY);
-	if (file == -1)
-		return (0);
-	rFile = read(file, buffer, letters);
-	if (rFile == -1)
-		return (0);
-	wFile = write(STDOUT_FILENO, buffer, rFile);
-	if (wFile == -1)
-		return (0);
-	closeFile = close(file);
-	if (closeFile == -1)
-		return (0);
-	free(buffer);
-	return (rFile);
+	if (filename != NULL)
+	{
+		buffer = malloc(sizeof(char) * letters);
+		file = open(filename, O_RDONLY);
+
+		if (file != -1 && buffer != NULL)
+		{
+			rd_wr = read(file, buffer, letters);
+			rd_wr = write(STDOUT_FILENO, buffer, rd_wr);
+		}
+		close(file);
+		free(buffer);
+	}
+	return (rd_wr);
 }
